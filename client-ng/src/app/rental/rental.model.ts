@@ -1,7 +1,5 @@
-import {s} from '@angular/core/src/render3';
-
-export interface RentalModel {
-  id: string | number;
+export class RentalModel {
+  id: string;
   title: string;
   city: string;
   street: string;

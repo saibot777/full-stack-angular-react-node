@@ -5,6 +5,7 @@ import {RentalComponent} from './rental.component';
 import {RentalListComponent} from './rental-list/rental-list.component';
 import {RentalListItemComponent} from './rental-list-item/rental-list-item.component';
 import {RentalRoutingModule} from './rental-routing.module';
+import {RentalService} from './rental.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {RentalRoutingModule} from './rental-routing.module';
   imports: [
     CommonModule,
     RentalRoutingModule
-  ]
+  ],
+  providers: [RentalService]
 })
 
 export class RentalModule {}
