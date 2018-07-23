@@ -31,7 +31,7 @@ app.use(cors(options));
 // require('./services/passport')(passport);
 
 // API Routes
-// require('./routes')(app);
+require('./routes')(app);
 
 // Connect to MongoDB
 // mongoose
