@@ -1,1 +1,10 @@
-<h1>{{currentId}}</h1>
+<div *ngIf="rental">
+  <p>{{rental.id}}</p>
+  <p>{{rental.category}}</p>
+  <p>{{rental.dailyRate}}</p>
+  <p>{{rental.description}}</p>
+  <p>{{rental.bedrooms}}</p>
+  <p>{{rental.city}}</p>
+  <p>{{rental.createdAt}}</p>
+</div>
+

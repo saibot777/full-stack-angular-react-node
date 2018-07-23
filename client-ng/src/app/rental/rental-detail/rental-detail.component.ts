@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {RentalService} from '../rental.service';
+import {RentalModel} from '../rental.model';
 
 @Component({
   selector: 'app-rental-detail',
@@ -7,14 +9,19 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./rental-detail.component.scss']
 })
 export class RentalDetailComponent implements OnInit {
-  currentId: string;
+  rental: RentalModel;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private rentalService: RentalService) { }
 
   ngOnInit() {
     this.route.params.subscribe(
-      params => this.currentId = params['id']
+      params => this.getRental( params['id'])
     );
+  }
+
+  getRental(rentalId: string) {
+    this.rentalService.getRentalById(rentalId)
+      .subscribe((rental: RentalModel) => this.rental = rental);
   }
 
 }
